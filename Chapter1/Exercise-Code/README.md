@@ -11,3 +11,9 @@ Get an error message
          ^~~~~~~~~~~~~~~~~~
 ```
 
+### 1-4
+
+Get the formula
+$$
+F=\frac{9}{5}\times C + 32
+$$
