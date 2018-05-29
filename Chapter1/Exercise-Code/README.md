@@ -29,3 +29,7 @@ In the program I wrote I use the following statement:
 ```
 
 The condition is equivalent to `c = (getchar() != EOF)` as the book mentioned that `!=` has higher *precedence* than `=`.
+
+### 1-8
+
+Initialization is significant.
