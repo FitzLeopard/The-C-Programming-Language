@@ -17,3 +17,15 @@ Get the formula
 $$
 F=\frac{9}{5}\times C + 32
 $$
+
+### 1-6
+
+In the program I wrote I use the following statement:
+
+```c
+	while (c = getchar() != EOF)
+		printf("%d", c);
+	printf("%d", c);
+```
+
+The condition is equivalent to `c = (getchar() != EOF)` as the book mentioned that `!=` has higher *precedence* than `=`.
