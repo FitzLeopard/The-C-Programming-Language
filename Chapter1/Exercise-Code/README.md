@@ -33,3 +33,13 @@ The condition is equivalent to `c = (getchar() != EOF)` as the book mentioned th
 ### 1-8
 
 Initialization is significant.
+
+### 1-16
+
+I used the following condition to test `Getline` overflow.
+
+```C
+currLen == MAXLINE - 1 && line[MAXLINE - 2] != '\n'
+```
+
+Actually, the array does not contain `MAXLINE` characters. Instead, it contains `MAXLINE - 1` characters.
