@@ -5,7 +5,7 @@
 */
 
 #include<stdio.h>
-#define MAXLINE 1000		/* no-need-to-print input line size + 1 */
+#define MAXLINE 1001		/* no-need-to-print input line size + 1 */
 
 int Getline(char line[], int maxline);
 void copy(char to[], char from[]);
@@ -24,6 +24,11 @@ int main()
 	char line[MAXLINE];	/* current input line */
 
 	while ((len = Getline(line, MAXLINE)) > 0) {
+		if (len == MAXLINE - 1 && line[MAXLINE - 2] != '\n') {
+			// overflow detected
+			printf("Overflow detected.\n");
+			return -1;
+		}
 		i = len - 2;
 		while (line[i] == ' ' || line[i] == '\t') {
 			line[i] = '\n';
