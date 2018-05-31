@@ -9,3 +9,8 @@ The convention is that every file should end with a newline. And **Vim** will ad
 ### Counting Word
 
 The program `CountingWord.c` almost has the same function as the hashed command `wc`.
+
+#### Character Array
+
+The standard library has a `getline` function so I rename the function as `Getline`.
+
