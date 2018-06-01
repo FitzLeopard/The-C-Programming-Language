@@ -21,24 +21,24 @@ int main()
 	state = OUT_STRING;
 	c = clast = NONCHAR;
 	while ((c = getchar()) != EOF) {
-		if (state == IN_STRING) {
+		if (state == IN_STRING) {		// in-string, just print
 			putchar(c);
-			if (c == '\"' && clast != '\\') {
+			if (c == '\"' && clast != '\\') {		// get out of string
 				state = OUT_STRING;
 			}
 		}
-		else if (c == '/') {
+		else if (c == '/') {		// potentially comment
 			clast = c;
 			c = getchar();
-			if (c == '*' && clast == '/') {
+			if (c == '*' && clast == '/') {	// block comment
 				RmBlock();
 				c = clast = NONCHAR;
 			}
-			else if (c == '/' && clast == '/') {
+			else if (c == '/' && clast == '/') {	// line comment
 				RmLine();
 				c = clast = NONCHAR;
 			}
-			else {
+			else {			// not comment
 				putchar(clast);
 				putchar(c);
 				clast = c;
@@ -46,6 +46,9 @@ int main()
 		}
 		else {
 			putchar(c);
+			if (c == '\"' && clast != '\\') {		// get into string
+				state = IN_STRING;
+			}
 			clast = c;
 		}
 	}
