@@ -43,3 +43,7 @@ currLen == MAXLINE - 1 && line[MAXLINE - 2] != '\n'
 ```
 
 Actually, the array does not contain `MAXLINE` characters. Instead, it contains `MAXLINE - 1` characters.
+
+### 1-19
+
+Since the *prototype* in the problem is similar to `reverse(s)`, I write the function `void reverse(char s[])`. But the function will be more efficient if we are allowed to pass the length of string to it.
