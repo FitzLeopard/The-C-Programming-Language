@@ -18,7 +18,7 @@ int main()
 	len = 0;
 	while ((c = getchar()) != EOF) {
 		if (c == '\t') {
-			next = (len / 4 + 1) * 4;
+			next = (len / TABLEN + 1) * TABLEN;
 			for (; len < next; ++len) {
 				putchar(' ');
 			}
