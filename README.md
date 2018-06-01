@@ -34,6 +34,10 @@ There are some exercises that are so interesting that I desire to solve them on 
 
 #### List
 
+| Exercise ID | Scheduled Day to solve it | Status   |
+| ----------- | ------------------------- | -------- |
+| 1-24        | 2018-06-26                | Unsolved |
+
 
 
 ### Scheduled Rewritten List
