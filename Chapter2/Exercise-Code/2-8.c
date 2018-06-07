@@ -11,6 +11,7 @@ unsigned rightrot(unsigned x, int n)
 {
 	int length = 8 * sizeof(x), lastn = 0;
 
+	/*Correction*/ n %= length; /*Correction*/
 	printf("length = %d\n", length);		// length of unsigned
 	lastn = x & (~(~0 << n));				// get the last n bits of x
 	x >>= n;
