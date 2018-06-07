@@ -25,3 +25,9 @@ My solution is wrong. I corrected it. It was wrong because I didn't take the sit
 The standard solution is more compact and elegant.
 
 I will revisit this problem.
+
+### 2-9
+
+In a two's complement number system, `x &= x - 1` will remove the rightmost 1-bit in `x`.  Why?
+
+Suppose that we have a number and its 2-radix representation. If it is not 0, it must have at least one 1-bit. So it must have the following format---$X10\cdots0$. $X$ is a lot of bits. So `x-1` will be $X01\cdots1$. It is obvious that `x & (x - 1)` only eliminates the rightmost 1-bit of `x`.
