@@ -53,4 +53,7 @@ And there are also some difficult but interesting exercise that I really want to
 | Exercise ID | Scheduled Day to rewrite it | Status |
 | ----------- | --------------------------- | ------ |
 | 1-23        | 2018-06-26                  | To-Do  |
+| 2-1         | 2018-06-28                  | To-Do  |
+| 2-2         | 2018-06-28                  | To-Do  |
+| 2-8         | 2018-06-28                  | To-Do  |
 
