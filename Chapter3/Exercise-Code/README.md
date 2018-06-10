@@ -7,3 +7,5 @@ The largest negative number is $-(2^{\text{wordsize}-1})$. In the original versi
 My new version of `itoa` in `3-4.c`  fixes this issue. It doesn't change the value of `n`. Instead, it will use the variable `sign` to adjust the number extracted from `n`.
 
 But I don't think my version is machine-independent because it uses `%` on negative number. So I wrote the version in `3-4-independent.c`. I think it is independent of machine because it does not use `%`, only `/` was used.
+
+But that does not seem to be true. The direction of truncation of `/` for negative number is also machine dependent!
