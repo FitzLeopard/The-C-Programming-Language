@@ -1,6 +1,6 @@
 /*
  *	Date: 2018-06-11
- *	Exercise 4-1 of K&R
+ *	Exercise 4-2 of K&R
  *	By Rivers
 */
 
