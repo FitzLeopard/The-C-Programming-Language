@@ -1,6 +1,6 @@
 /*
  *	Date: 2018-06-11
- *	Page 76, 77, 78 of K&R
+ *	Exercise 4-5 of K&R
  * 	By Rivers
 */
 
