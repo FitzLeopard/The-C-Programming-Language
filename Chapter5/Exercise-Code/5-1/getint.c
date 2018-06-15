@@ -41,10 +41,8 @@ int getint(int *pn)
 	if (c == '-' || c == '+') {
 		c = getch();
 	}
-	if (!isdigit(c)) {
-		if (c != EOF) {
-			ungetch(c);
-		}
+	if (!isdigit(c) && c != EOF) {
+		ungetch(c);
 		return 0;	/* not a number */
 	}
 	else {
