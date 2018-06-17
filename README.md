@@ -37,6 +37,8 @@ There are some exercises that are so interesting that I desire to solve them on 
 | Exercise ID | Scheduled Day to solve it | Status   |
 | ----------- | ------------------------- | -------- |
 | 1-24        | 2018-06-26                | Unsolved |
+| 5-5         | 2018-07-01                | Unsolved |
+| 5-6         | 2018-07-01                | Unsolved |
 
 
 
