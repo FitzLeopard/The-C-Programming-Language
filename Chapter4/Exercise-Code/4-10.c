@@ -10,10 +10,14 @@
 
 #define MAXOP 100		/* maximum number of operator or operand */
 #define NUMBER '0'		/* signal that a number was found */
+#define MAXLEN 1000
 
 int getop(char []);
 void push(double);
 double pop(void);
+int Getline(char line[], int maxlen);
+
+char line[MAXLEN];
 
 /* reverse Polish Calculator */
 int main()
@@ -22,6 +26,7 @@ int main()
 	double op2, mod1f, mod2f;
 	char s[MAXOP];
 
+	Getline(line, MAXLEN);
 	while ((type = getop(s)) != EOF) {
 		switch (type) {
 			case NUMBER:
@@ -58,6 +63,7 @@ int main()
 				break;
 			case '\n':
 				printf("\t%.8g\n", pop());
+				Getline(line, MAXLEN);
 				break;
 			default:
 				printf("Error: unknown command %s\n", s);
@@ -98,44 +104,44 @@ double pop(void)
 
 #include<ctype.h>
 
-int getch(void);
-void ungetch(int);
+int Getline(char line[], int maxlen);
 
 /* getop: get next operator or numeric operand */
 int getop(char s[])
 {
-	int i = 0, c, cnext;
+	int c, cnext, j = 0;
+	static int i = 0;
 
-	while ((s[0] = c = getch()) == ' ' || c == '\t')
-		;
+	while ((s[0] = c = line[i]) == ' ' || c == '\t')
+		++i;
 	s[1] = '\0';
 	if (!isdigit(c) && c != '.') {
 		if (c != '-' && c != '+') {
+			if (c == '\n') {
+				i = 0;
+			}
+			else {
+				++i;
+			}
 			return c;
 		}
-		cnext = getch();
+		cnext = line[++i]; 
 		if (isdigit(cnext)) {	
-			s[++i] = c = cnext;		/* a number with sign */
+			s[++j] = c = cnext;		/* a number with sign */
 		}
 		else {	/* not a number */
-			if (cnext != EOF) {
-				ungetch(cnext);
-			}
 			return c;
 		}
 	}
 	if (isdigit(c)) {		/* collect integer part */
-		while (isdigit(s[++i] = c = getch()))
+		while (isdigit(s[++j] = c = line[++i]))
 			;
 	}
 	if (c == '.') {			/* collect fraction part */
-		while (isdigit(s[++i] = c = getch()))
+		while (isdigit(s[++j] = c = line[++i]))
 			;
 	}
-	s[i] = '\0';
-	if (c != EOF) {
-		ungetch(c);
-	}
+	s[j] = '\0';
 
 	return NUMBER;
 }
