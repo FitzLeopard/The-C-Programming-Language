@@ -40,6 +40,8 @@ There are some exercises that are so interesting that I desire to solve them on 
 | 5-5         | 2018-07-01                | Unsolved |
 | 5-6         | 2018-07-01                | Unsolved |
 | 5-12        | 2018-07-03                | Unsolved |
+| 5-16        | 2018-07-07                | Unsolved |
+| 5-17        | 2018-07-07                | Unsolved |
 
 
 
