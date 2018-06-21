@@ -13,6 +13,7 @@
 int TailNum(int argc, char *argv[]);
 int getTail(char *TailLine[], int tail);
 void printTail(char *TailLine[], int tail, int tailp);
+void freeTail(char *TailLine[], int tail);
 
 int main(int argc, char *argv[])
 {
@@ -33,6 +34,7 @@ int main(int argc, char *argv[])
 
 	printTail(TailLine, tail, tailp);
 
+	freeTail(TailLine, tail);
 	return 0;
 }
 
@@ -68,16 +70,18 @@ int getTail(char *TailLine[], int tail)
 	for (i = 0; i < MAXTAIL; ++i) {
 		TailLine[i] = NULL;
 	}
-	while ((Getline(line, MAXLINE) > 0)) {
+	while ((len = Getline(line, MAXLINE)) > 0) {
 		++nline;
 		tailp = (tailp + 1) % tail;
 		if (len == MAXLINE - 1 && line[MAXLINE - 2] != '\n') {
 			printf("Error: Too long input per line\n");
 			return -1;
 		}
-		if (nline <= tail) {
-			TailLine[tailp] = (char *) malloc((len + 1) * sizeof(char));
+		if (nline > tail) {
+			tmp = TailLine[tailp];
+			free(tmp);
 		}
+		TailLine[tailp] = (char *) malloc((len + 1) * sizeof(char));
 		strcpy(TailLine[tailp], line);
 	}
 	
@@ -112,4 +116,13 @@ int Getline(char *line, int max)
 	line[i] = '\0';
 
 	return i;
+}
+
+void freeTail(char *TailLine[], int tail)
+{
+	while (*TailLine != NULL && tail != 0) {
+		free(*TailLine);
+		++TailLine;
+		--tail;
+	}
 }
