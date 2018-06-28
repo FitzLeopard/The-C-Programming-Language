@@ -34,7 +34,6 @@ int main()
 	char c;
     struct _stack s;
 
-    freopen("text", "r", stdin);
     init(&s);
     while ((len = Getline(line, MAX)) > 0) {
 		++nline;
@@ -60,8 +59,12 @@ int main()
         	}
 		}
     }
-	printf("No Error detected\n");
-
+    if (!isempty(&s)) {
+        printf("Error detected\n");
+    }
+    else {
+	    printf("No Error detected\n");
+    }
     return 0;
 }
 
