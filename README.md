@@ -36,7 +36,7 @@ There are some exercises that are so interesting that I desire to solve them on 
 
 | Exercise ID | Scheduled Day to solve it | Status   |
 | ----------- | ------------------------- | -------- |
-| 1-24        | 2018-06-26                | Unsolved |
+| 1-24        | 2018-06-26                | Solved   |
 | 5-5         | 2018-07-01                | Unsolved |
 | 5-6         | 2018-07-01                | Unsolved |
 | 5-12        | 2018-07-03                | Unsolved |
@@ -58,7 +58,7 @@ And there are also some difficult but interesting exercise that I really want to
 | Exercise ID | Scheduled Day to rewrite it | Status |
 | ----------- | --------------------------- | ------ |
 | 1-23        | 2018-06-26                  | Done   |
-| 2-1         | 2018-06-28                  | To-Do  |
-| 2-2         | 2018-06-28                  | To-Do  |
+| 2-1         | 2018-06-28                  | Done  |
+| 2-2         | 2018-06-28                  | Done  |
 | 2-8         | 2018-06-28                  | To-Do  |
 
